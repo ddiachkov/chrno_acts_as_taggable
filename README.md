@@ -20,17 +20,7 @@ __chrno_acts_as_taggable__ -- реализация тегов для Rails.
     class Photo < ActiveRecord::Base
       acts_as_taggable
     end
-
-Форма:
-
-    <%= form_for @post do %>
-      ...
-      <%= f.text_field :tags >
-      ...
-    <% end %>
-
-Консоль:
-
+    ...
     @photo = Photo.first
     @photo.tags                 #=> []
     @photo.tags = "tag1, tag2"
@@ -39,3 +29,11 @@ __chrno_acts_as_taggable__ -- реализация тегов для Rails.
     @photo.tags.add "tag3"
     @photo.tags.delete "tag1"
     @photo.tags                 #=> [ <Tag name="tag2">, <Tag name="tag3"> ]
+
+Форма:
+
+    <%= form_for @post do %>
+      ...
+      <%= f.text_field :tags >
+      ...
+    <% end %>
